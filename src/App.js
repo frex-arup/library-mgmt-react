@@ -7,20 +7,21 @@ import Createnewbook from './pages/Createnewbook';
 
 import Usermanagement from './pages/Usermanagement';
 import Welcomepage from './pages/Welcomepage';
-import EmployeeView from './component/EmployeeView';
 
 
-
+import Login from './pages/Login';
+import Register from './pages/Register';
 function App() {
   return (
     <Router>
-      <Header/>
-      <EmployeeView/>
+      <Header/> 
       <Routes> 
-        <Route exact path="/" element={<Bookmanagement/>}/>
-        <Route exact path="/" element={<Createnewbook/>}/>
-        <Route exact path="/" element={<Usermanagement/>}/>
-        <Route exact path="/" element={<Welcomepage/>}/>      
+        <Route exact path="/" element={<Login/>}/>
+        <Route exact path="/Register" element={<Register/>}/>
+        <Route exact path="/Bookmanagement" element={<Bookmanagement/>}/>
+        <Route exact path="/Createnewbook" element={<Createnewbook/>}/>
+        <Route exact path="/Usermanagement" element={<Usermanagement/>}/>
+        <Route exact path="/Welcomepage" element={<Welcomepage/>}/>      
       </Routes> 
       <Footer/>
     </Router>
