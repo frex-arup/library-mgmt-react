@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Bookmanagement() {
   const bookmanagement = [
     {
@@ -73,6 +75,7 @@ export default function Bookmanagement() {
   ];
   return (
     <div>
+      <Link to="/library-mgmt-react" class="previous">&laquo; </Link>
       <nav className="navbar navbar-expand-lg ">
         <div className="container-fluid">
           {/* <a className="navbar-brand" href="#">
@@ -104,13 +107,13 @@ export default function Bookmanagement() {
                 </div>
               </li>
               <li>
-                <button
+                <Link to="/Createnewbook"><button
                   type="button"
                   class="btn btn-primary"
                   style={{ margin: "10px" }}
                 >
                   New book
-                </button>
+                </button></Link>
               </li>
             </ul>
             <form className="d-flex" role="search">
@@ -127,6 +130,7 @@ export default function Bookmanagement() {
           </div>
         </div>
       </nav>
+      
       <div class="table-responsive">
         <table class="table table-info table-hover">
           <thead className="table-danger">
@@ -165,6 +169,7 @@ export default function Bookmanagement() {
           </tbody>
         </table>
       </div>
+      
     </div>
   );
 }

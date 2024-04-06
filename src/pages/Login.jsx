@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Loginimage from '../Images/loginpage.png';
+import Loginimage1 from '../Images/login.png';
 import { Link } from 'react-router-dom';
 
 function Login() {
@@ -18,14 +19,14 @@ function Login() {
 <>
 <h1>Library Management App</h1>
     <div className="container-fluid">
-      <div className="row">
+      <div className="row" style={{gap:'50px'}}>
         <div className="col-md-6 ">
         <img src={Loginimage} className='login-image' alt="Login" />
 
         </div>
         <div className="col-md-6 login-form">
           <form>
-          <h2 className="mb-4">Login Your Account</h2>
+          <img src={Loginimage1} className='login-image1' alt="Login" />
             <div className="mb-3">
               <label htmlFor="username" className="form-label">Username</label>
               <input

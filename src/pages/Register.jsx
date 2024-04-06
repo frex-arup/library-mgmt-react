@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Loginimage from '../Images/loginpage.png';
+import { Link } from 'react-router-dom';
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -23,6 +24,7 @@ function Register() {
 
   return (
     <div className="container">
+      <Link to="/" class="previous">&laquo;Login </Link>
       <div className="row justify-content-center">
         <div className='col-md-6'>
         <img src={Loginimage} className='login-image' alt="Login" />
