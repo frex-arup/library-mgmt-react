@@ -8,7 +8,7 @@ const Welcomepage = () => {
     <div>
       <>
         <h1>Welcome Coders</h1>
-        <h6 className="mb-4">Modules:</h6>
+        <h6 className="mb-4">Module1:</h6>
         <div className="row"> 
           <div className="col-md-6">
             <div className="container desgn">
@@ -16,7 +16,9 @@ const Welcomepage = () => {
               <Link to="/Bookmanagement"> <div className="overlay">BookManagement </div></Link>
             </div>
           </div>
+          
           <div className="col-md-6">
+          <h6 className="mb-4">Module2:</h6>
           <div className="container desgn">
               <img src={usersmanagement} alt="Avatar" className="image " />
               <Link to="/Usermanagement"><div className="overlay">users-management</div></Link>

@@ -4,11 +4,8 @@ import Header from './component/Header';
 import Footer from './component/Footer';
 import Bookmanagement from './pages/Bookmanagement';
 import Createnewbook from './pages/Createnewbook';
-
 import Usermanagement from './pages/Usermanagement';
 import Welcomepage from './pages/Welcomepage';
-
-
 import Login from './pages/Login';
 import Register from './pages/Register';
 function App() {
@@ -21,7 +18,7 @@ function App() {
         <Route exact path="/Bookmanagement" element={<Bookmanagement/>}/>
         <Route exact path="/Createnewbook" element={<Createnewbook/>}/>
         <Route exact path="/Usermanagement" element={<Usermanagement/>}/>
-        <Route exact path="/Welcomepage" element={<Welcomepage/>}/>      
+        <Route exact path="/library-mgmt-react" element={<Welcomepage/>}/>      
       </Routes> 
       <Footer/>
     </Router>

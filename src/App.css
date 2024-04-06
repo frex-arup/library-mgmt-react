@@ -157,7 +157,7 @@ tr,th,thead,td{
   }
   
   button:hover {
-    background-color: #637eff;
+    /* background-color: #63ti7eff; */
     transition: all ease 0.3s;
   }
   

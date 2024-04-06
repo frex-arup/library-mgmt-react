@@ -94,7 +94,7 @@ export default function Bookmanagement() {
               <li>
                 <div class="dropdown">
                   <button class="dropbtn">
-                    Dropdown <i class="fa fa-caret-down"></i>
+                    Show rows <i class="fa fa-caret-down"></i>
                   </button>
                   <div class="dropdown-content">
                     <a href="#">Link 1</a>
