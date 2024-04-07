@@ -1,78 +1,14 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { getBooks } from "../Services/BookService";
 
 export default function Bookmanagement() {
-  const bookmanagement = [
-    {
-      id: 1,
-      title: "Book Title 1",
-      author: "Author 1",
-      genre: "Genre 1",
-      publisher: "Publisher 1",
-      isbn: "ISBN 1",
-      price: 20.0,
-      stock: 10,
-    },
-    {
-      id: 2,
-      title: "Book Title 2",
-      author: "Author 2",
-      genre: "Genre 2",
-      publisher: "Publisher 2",
-      isbn: "ISBN 2",
-      price: 25.0,
-      stock: 15,
-    },
-    {
-      id: 3,
-      title: "Book Title 3",
-      author: "Author 3",
-      genre: "Genre 3",
-      publisher: "Publisher 3",
-      isbn: "ISBN 3",
-      price: 18.0,
-      stock: 20,
-    },
-    {
-      id: 4,
-      title: "Book Title 4",
-      author: "Author 4",
-      genre: "Genre 4",
-      publisher: "Publisher 4",
-      isbn: "ISBN 4",
-      price: 87,
-      stock: 55,
-    },
-    {
-      id: 5,
-      title: "Book Title 5",
-      author: "Author 5",
-      genre: "Genre 5",
-      publisher: "Publisher 5",
-      isbn: "ISBN 5",
-      price: 54,
-      stock: 76,
-    },
-    {
-      id: 6,
-      title: "Book Title 6",
-      author: "Author 6",
-      genre: "Genre 6",
-      publisher: "Publisher 6",
-      isbn: "ISBN 6",
-      price: 45,
-      stock: 57,
-    },
-    {
-      id: 7,
-      title: "Book Title 7",
-      author: "Author 7",
-      genre: "Genre 7",
-      publisher: "Publisher 7",
-      isbn: "ISBN 7",
-      price: 69,
-      stock: 99,
-    },
-  ];
+  const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    setBooks(getBooks());
+  }, []);
+  
   return (
     <div>
       <Link to="/library-mgmt-react" class="previous">&laquo; </Link>
@@ -130,7 +66,7 @@ export default function Bookmanagement() {
           </div>
         </div>
       </nav>
-      
+
       <div class="table-responsive">
         <table class="table table-info table-hover">
           <thead className="table-danger">
@@ -148,7 +84,7 @@ export default function Bookmanagement() {
             </tr>
           </thead>
           <tbody>
-            {bookmanagement.map((employee) => (
+            {books.map((employee) => (
               <tr key={employee.id}>
                 <td>{employee.id}</td>
                 <td>{employee.title}</td>
@@ -169,7 +105,7 @@ export default function Bookmanagement() {
           </tbody>
         </table>
       </div>
-      
+
     </div>
   );
 }
