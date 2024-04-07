@@ -89,7 +89,7 @@ export function getBookById(id) {
 
 export function addBook(newBook) {
   let books = getBooks();
-  books.push(newBook);
+  books.push({ ...newBook, id: books.sort()[books.length - 1].id + 1 });
   localStorage.setItem('books', JSON.stringify(books));
 }
 
