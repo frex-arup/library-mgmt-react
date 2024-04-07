@@ -22,7 +22,7 @@ const Header = () => {
         <li className="nav-item">
           <Link className="nav-link" to="/"> <button
                   type="button"
-                  class="btn btn-primary"
+                  className="btn btn-primary"
                   style={{marginTop:'-8px'}}
                 >
                   Login/Register

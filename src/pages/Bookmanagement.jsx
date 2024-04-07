@@ -11,7 +11,7 @@ export default function Bookmanagement() {
   
   return (
     <div>
-      <Link to="/library-mgmt-react" class="previous">&laquo; </Link>
+      <Link to="/library-mgmt-react" className="previous">&laquo; </Link>
       <nav className="navbar navbar-expand-lg ">
         <div className="container-fluid">
           {/* <a className="navbar-brand" href="#">
@@ -31,11 +31,11 @@ export default function Bookmanagement() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li>
-                <div class="dropdown">
-                  <button class="dropbtn">
-                    Show rows <i class="fa fa-caret-down"></i>
+                <div className="dropdown">
+                  <button className="dropbtn">
+                    Show rows <i className="fa fa-caret-down"></i>
                   </button>
-                  <div class="dropdown-content">
+                  <div className="dropdown-content">
                     <a href="#">Link 1</a>
                     <a href="#">Link 2</a>
                     <a href="#">Link 3</a>
@@ -45,7 +45,7 @@ export default function Bookmanagement() {
               <li>
                 <Link to="/Createnewbook"><button
                   type="button"
-                  class="btn btn-primary"
+                  className="btn btn-primary"
                   style={{ margin: "10px" }}
                 >
                   New book
@@ -67,8 +67,8 @@ export default function Bookmanagement() {
         </div>
       </nav>
 
-      <div class="table-responsive">
-        <table class="table table-info table-hover">
+      <div className="table-responsive">
+        <table className="table table-info table-hover">
           <thead className="table-danger">
             <tr>
               <th>id</th>

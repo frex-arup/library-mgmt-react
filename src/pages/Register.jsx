@@ -24,7 +24,7 @@ function Register() {
 
   return (
     <div className="container">
-      <Link to="/" class="previous">&laquo;Login </Link>
+      <Link to="/" className="previous">&laquo;Login </Link>
       <div className="row justify-content-center">
         <div className='col-md-6'>
         <img src={Loginimage} className='login-image' alt="Login" />
