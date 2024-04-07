@@ -2,32 +2,28 @@ import React, { useState } from 'react'
 import { addBook } from '../Services/BookService';
 
 const Createnewbook = () => {
-  const [bookt, setBookt] = useState('');
-  const [desp, setDesp] = useState('');
-  const [count, setCount] = useState('');
-  const [availability, setAvailability] = useState('yes');
-
-  const handleBooktChange = (event) => {
-    setBookt(event.target.value);
-  };
-
-  const handleDespChange = (event) => {
-    setDesp(event.target.value);
-  };
-
-  const handleCountChange = (event) => {
-    setCount(event.target.value);
-  };
-
-  const handleAvailabilityChange = (event) => {
-    setAvailability(event.target.checked);
-  };
+  const [title, setTitle] = useState('');
+  const handleTitleChange = (e) => setTitle(e.target.value);
+  const [author, setAuthor] = useState('');
+  const handleAuthorChange = (e) => setAuthor(e.target.value);
+  const [genre, setGenre] = useState('');
+  const handleGenreChange = (e) => setGenre(e.target.value);
+  const [publisher, setPublisher] = useState('');
+  const handlePublisherChange = (e) => setPublisher(e.target.value);
+  const [isbn, setIsbn] = useState('');
+  const handleIsbnChange = (e) => setIsbn(e.target.value);
+  const [price, setPrice] = useState('');
+  const handlePriceChange = (e) => setPrice(e.target.value);
+  const [stock, setStock] = useState('');
+  const handleStockChange = (e) => setStock(e.target.value);
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    const newBook = { bookt, desp, count, availability };
+    // event.preventDefault();
+    const newBook = { title, author, genre, publisher, isbn, price, stock };
     console.log(newBook);
     addBook(newBook);
+
+    alert("success");
   }
   return (
     <div>
@@ -40,36 +36,32 @@ const Createnewbook = () => {
                 <form className="form " style={{ textAlign: 'center' }} onSubmit={handleSubmit}>
                   <h1 className="mbook" style={{ textAlign: 'center' }} >Manage Book</h1>
                   <div className="form-group">
-                    <label htmlFor="fullname">Title:</label>
-                    <input type="text" id="bookt" name="bookt" value={bookt} onChange={handleBooktChange} required />
+                    <label htmlFor="title">Title:</label>
+                    <input type="text" id="title" value={title} onChange={handleTitleChange} title="title" required />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="desp">Description</label>
-                    <input type="text" id="desp" name="desp" value={desp} onChange={handleDespChange} required />
+                    <label htmlFor="author">author:</label>
+                    <input type="text" id="author" value={author} onChange={handleAuthorChange} title="author" required />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="fullname">Book Count :</label>
-                    <input type="text" id="count" name="count" value={count} onChange={handleCountChange} required />
+                    <label htmlFor="genre">genre:</label>
+                    <input type="text" id="genre" value={genre} onChange={handleGenreChange} title="genre" required />
                   </div>
-                  <div className="form-group" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                    <label htmlFor="subject">Availability :</label>
-                    <label htmlFor="yes">Yes</label>
-                    <input
-                      type="radio"
-                      id="yes"
-                      value="yes"
-                      checked={availability === 'yes'}
-                      onChange={handleAvailabilityChange}
-                    />
-
-                    <label htmlFor="no">No</label>
-                    <input
-                      type="radio"
-                      id="no"
-                      value="no"
-                      checked={availability === 'no'}
-                      onChange={handleAvailabilityChange}
-                    />
+                  <div className="form-group">
+                    <label htmlFor="publisher">publisher</label>
+                    <input type="text" id="publisher" title="publisher" value={publisher} onChange={handlePublisherChange} required />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="isbn">isbn</label>
+                    <input type="text" id="isbn" title="isbn" value={isbn} onChange={handleIsbnChange} required />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="price">price</label>
+                    <input type="text" id="price" title="price" value={price} onChange={handlePriceChange} required />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="stock">stock :</label>
+                    <input type="text" id="stock" value={stock} onChange={handleStockChange} title="stock" required />
                   </div>
                   <button type="reset" className="btn btn-primary" style={{ marginRight: '10px' }}>Reset</button>
                   <button type="submit" className="btn btn-primary">Add book</button>
