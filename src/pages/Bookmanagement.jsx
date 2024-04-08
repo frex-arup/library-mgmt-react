@@ -5,10 +5,17 @@ import { getBooks } from "../Services/BookService";
 export default function Bookmanagement() {
   const [books, setBooks] = useState([]);
 
+function deleteBook(id) {
+const newBook=books
+setBooks=(newBook);
+}
+
+
   useEffect(() => {
     setBooks(getBooks());
   }, []);
-  
+
+   
   return (
     <div>
       <Link to="/library-mgmt-react" className="previous">&laquo; </Link>
@@ -98,7 +105,7 @@ export default function Bookmanagement() {
                   <i className="material-icons">mode_edit</i>
                 </td>
                 <td>
-                  <i className="material-icons">delete</i>
+                  <i className="material-icons" onClick={() => deleteBook(employee.id)}>delete</i>
                 </td>
               </tr>
             ))}
