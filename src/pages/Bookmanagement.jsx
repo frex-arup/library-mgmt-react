@@ -1,21 +1,25 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getBooks } from "../Services/BookService";
+import { deleteBookById } from "../Services/BookService";
 
 export default function Bookmanagement() {
   const [books, setBooks] = useState([]);
 
-function deleteBook(id) {
-const newBook=books
-setBooks=(newBook);
-}
+  const deleteBook = (id) => {
+    // eslint-disable-next-line no-restricted-globals
+    if (confirm("Are you sure you want to delete this book?")) {
+      deleteBookById(id);
+      setBooks(getBooks());
+    }
+  };
 
 
   useEffect(() => {
     setBooks(getBooks());
   }, []);
 
-   
+
   return (
     <div>
       <Link to="/library-mgmt-react" className="previous">&laquo; </Link>

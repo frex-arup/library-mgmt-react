@@ -100,7 +100,7 @@ export function updateBook(updatedBook) {
   localStorage.setItem('books', JSON.stringify(books));
 }
 
-export function deleteBook(id) {
+export function deleteBookById(id) {
   let books = getBooks().filter(book => book.id !== id);
   localStorage.setItem('books', JSON.stringify(books));
 }
