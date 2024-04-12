@@ -1,7 +1,10 @@
-import React, { useState } from 'react'
-import { addBook } from '../Services/BookService';
+import React, { useEffect, useState } from 'react'
+import { addBook, getBookById, updateBook } from '../Services/BookService';
+import { useParams } from 'react-router-dom';
 
 const Createnewbook = () => {
+  const { id } = useParams();
+
   const [title, setTitle] = useState('');
   const handleTitleChange = (e) => setTitle(e.target.value);
   const [author, setAuthor] = useState('');
@@ -17,13 +20,32 @@ const Createnewbook = () => {
   const [stock, setStock] = useState('');
   const handleStockChange = (e) => setStock(e.target.value);
 
+  useEffect(() => {
+    if (id) {
+      const book = getBookById(id);
+      setTitle(book.title);
+      setAuthor(book.author);
+      setGenre(book.genre);
+      setPublisher(book.publisher);
+      setIsbn(book.isbn);
+      setPrice(book.price);
+      setStock(book.stock);
+    }
+  }, [id]);
+
+
   const handleSubmit = (event) => {
     // event.preventDefault();
-    const newBook = { title, author, genre, publisher, isbn, price, stock };
-    console.log(newBook);
-    addBook(newBook);
-
-    alert("success");
+    if (id) {
+      const updatedBook = { id, title, author, genre, publisher, isbn, price, stock };
+      console.log(updatedBook);
+      updateBook(updatedBook);
+    } else {
+      const newBook = { title, author, genre, publisher, isbn, price, stock };
+      console.log(newBook);
+      addBook(newBook);
+      alert("success");
+    }
   }
   return (
     <div>
@@ -64,7 +86,7 @@ const Createnewbook = () => {
                     <input type="text" id="stock" value={stock} onChange={handleStockChange} title="stock" required />
                   </div>
                   <button type="reset" className="btn btn-primary" style={{ marginRight: '10px' }}>Reset</button>
-                  <button type="submit" className="btn btn-primary">Add book</button>
+                  <button type="submit" className="btn btn-primary">{id ? 'Update Book' : 'Add Book'}</button>
                 </form>
               </div>
 

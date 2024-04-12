@@ -17,6 +17,7 @@ function App() {
         <Route exact path="/Register" element={<Register/>}/>
         <Route exact path="/Bookmanagement" element={<Bookmanagement/>}/>
         <Route exact path="/Createnewbook" element={<Createnewbook/>}/>
+        <Route exact path="/update-book/:id" element={<Createnewbook/>}/>
         <Route exact path="/Usermanagement" element={<Usermanagement/>}/>
         <Route exact path="/library-mgmt-react" element={<Welcomepage/>}/>      
       </Routes> 

@@ -84,7 +84,7 @@ function setDefaultValues() {
 }
 
 export function getBookById(id) {
-  return getBooks().find(book => book.id === id);
+  return getBooks().find(book => book.id == id);
 }
 
 export function addBook(newBook) {
@@ -95,12 +95,12 @@ export function addBook(newBook) {
 
 export function updateBook(updatedBook) {
   let books = getBooks().map(book =>
-    book.id === updatedBook.id ? updatedBook : book
+    book.id == updatedBook.id ? updatedBook : book
   );
   localStorage.setItem('books', JSON.stringify(books));
 }
 
 export function deleteBookById(id) {
-  let books = getBooks().filter(book => book.id !== id);
+  let books = getBooks().filter(book => book.id != id);
   localStorage.setItem('books', JSON.stringify(books));
 }
