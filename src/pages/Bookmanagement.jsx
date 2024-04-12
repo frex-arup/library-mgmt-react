@@ -106,7 +106,7 @@ export default function Bookmanagement() {
                 <td>{employee.price}</td>
                 <td>{employee.stock}</td>
                 <td>
-                  <i className="material-icons">mode_edit</i>
+                  <Link to={`/update-book/${employee.id}`}><i className="material-icons" >mode_edit</i></Link>
                 </td>
                 <td>
                   <i className="material-icons" onClick={() => deleteBook(employee.id)}>delete</i>
