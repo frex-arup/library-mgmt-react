@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/library-mgmt-react/static/css/main.25a5d895.css",
-    "main.js": "/library-mgmt-react/static/js/main.8ffbe712.js",
+    "main.js": "/library-mgmt-react/static/js/main.b15f3399.js",
     "static/js/453.f57596df.chunk.js": "/library-mgmt-react/static/js/453.f57596df.chunk.js",
     "static/media/users-management.png": "/library-mgmt-react/static/media/users-management.65bd22488b9e1569ee89.png",
     "static/media/lib.png": "/library-mgmt-react/static/media/lib.6bd97eceb75c78932648.png",
     "static/media/loginpage.png": "/library-mgmt-react/static/media/loginpage.79fdc9380cb8b2741192.png",
     "index.html": "/library-mgmt-react/index.html",
     "main.25a5d895.css.map": "/library-mgmt-react/static/css/main.25a5d895.css.map",
-    "main.8ffbe712.js.map": "/library-mgmt-react/static/js/main.8ffbe712.js.map",
+    "main.b15f3399.js.map": "/library-mgmt-react/static/js/main.b15f3399.js.map",
     "453.f57596df.chunk.js.map": "/library-mgmt-react/static/js/453.f57596df.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.25a5d895.css",
-    "static/js/main.8ffbe712.js"
+    "static/js/main.b15f3399.js"
   ]
 }
