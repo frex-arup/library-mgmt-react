@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { addBook, getBookById, updateBook } from '../Services/BookService';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const Createnewbook = () => {
   const { id } = useParams();
@@ -33,18 +33,20 @@ const Createnewbook = () => {
     }
   }, [id]);
 
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
-    // event.preventDefault();
+    event.preventDefault();
     if (id) {
       const updatedBook = { id, title, author, genre, publisher, isbn, price, stock };
       console.log(updatedBook);
       updateBook(updatedBook);
+      navigate('/Bookmanagement');
     } else {
       const newBook = { title, author, genre, publisher, isbn, price, stock };
       console.log(newBook);
       addBook(newBook);
-      alert("success");
+      navigate('/Bookmanagement');
     }
   }
   return (
