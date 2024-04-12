@@ -2,13 +2,19 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getBooks } from "../Services/BookService";
 import { deleteBookById } from "../Services/BookService";
+import Swal from 'sweetalert2';
 
 export default function Bookmanagement() {
   const [books, setBooks] = useState([]);
 
   const deleteBook = (id) => {
     // eslint-disable-next-line no-restricted-globals
-    if (confirm("Are you sure you want to delete this book?")) {
+    if ( Swal.fire({
+      icon: "success",
+      title: "Deleted!",
+      text: "Your file has been deleted.",
+      // footer: '<a href="#">Why do I have this issue?</a>'
+    })) {
       deleteBookById(id);
       setBooks(getBooks());
     }

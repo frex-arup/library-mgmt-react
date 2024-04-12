@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { addBook, getBookById, updateBook } from '../Services/BookService';
 import { useParams, useNavigate, Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Createnewbook = () => {
   const { id } = useParams();
@@ -47,6 +48,12 @@ const Createnewbook = () => {
       console.log(newBook);
       addBook(newBook);
       navigate('/Bookmanagement');
+      Swal.fire({
+        icon: "success",
+        // title: "Oops...",
+        text: "Successfully added!",
+        // footer: '<a href="#">Why do I have this issue?</a>'
+      });
     }
   }
   return (
@@ -89,7 +96,7 @@ const Createnewbook = () => {
                     <input type="text" id="stock" value={stock} onChange={handleStockChange} title="stock" required />
                   </div>
                   <button type="reset" className="btn btn-primary" style={{ marginRight: '10px' }}>Reset</button>
-                  <button type="submit" className="btn btn-primary">{id ? 'Update Book' : 'Add Book'}</button>
+                  <button type="submit"  className="btn btn-primary">{id ? 'Update Book' : 'Add Book'}</button>
                 </form>
               </div>
 

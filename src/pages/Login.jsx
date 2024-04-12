@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Loginimage1 from '../Images/login.png';
 import Loginimage from '../Images/loginpage.png';
+import Swal from 'sweetalert2';
+
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -23,9 +25,21 @@ function Login() {
       sessionStorage.setItem('isLoggedIn', 'true');
       // Redirect to the protected route
       navigate('/library-mgmt-react');
+      Swal.fire({
+        icon: "success",
+        // title: "Oops...",
+        text: " Logged In Successfully.",
+        // footer: '<a href="#">Why do I have this issue?</a>'
+      });
     } else {
       // Show an error message
-      alert('Invalid username or password');
+      // alert('Invalid username or password');
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Invalid username or password!",
+        // footer: '<a href="#">Why do I have this issue?</a>'
+      });
     }
   };
 
