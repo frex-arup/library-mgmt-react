@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { addBook } from '../Services/BookService';
+import { Link } from 'react-router-dom';
 
 const Createnewbook = () => {
   const [title, setTitle] = useState('');
@@ -29,6 +30,7 @@ const Createnewbook = () => {
     <div>
       <>
         <div className="container">
+        <Link to="/Bookmanagement" className="previous">&laquo; </Link>
           <div className="row" style={{ textAlign: 'center' }}>
 
             <div className="book">
@@ -63,7 +65,7 @@ const Createnewbook = () => {
                     <label htmlFor="stock">stock :</label>
                     <input type="text" id="stock" value={stock} onChange={handleStockChange} title="stock" required />
                   </div>
-                  <button type="reset" className="btn btn-primary" style={{ marginRight: '10px' }}>Reset</button>
+                  <button type="reset" className="btn btn-primary" style={{ margin: '20px' }}>Reset</button>
                   <button type="submit" className="btn btn-primary">Add book</button>
                 </form>
               </div>

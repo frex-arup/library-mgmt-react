@@ -24,7 +24,7 @@ function Register() {
 
   return (
     <div className="container">
-      <Link to="/" className="previous">&laquo;Login </Link>
+      
       <div className="row justify-content-center">
         <div className='col-md-6'>
         <img src={Loginimage} className='login-image' alt="Login" />
@@ -85,6 +85,7 @@ function Register() {
             </div>
             
             <button type="submit" className="btn btn-primary">Sign Up</button>
+            <Link to="/" className="previous" style={{float:'right'}}>&laquo;Login </Link>
           </form>
         </div>
       </div>
