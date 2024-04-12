@@ -31,8 +31,8 @@ function Login() {
 
   return (
     <>
-      <h1>Library Management App</h1>
-      <div className="container-fluid">
+      <h1 style={{textAlign:'center'}}>Library Management App</h1>
+      <div className="container-fluid p-t80">
         <div className="row" style={{ gap: '50px' }}>
           <div className="col-md-6 ">
             <img src={Loginimage} className='login-image' alt="Login" />
