@@ -4,6 +4,7 @@ import Footer from './component/Footer';
 import Header from './component/Header';
 import Bookmanagement from './pages/Bookmanagement';
 import Createnewbook from './pages/Createnewbook';
+import CreateNewUser from './pages/CreateNewUser';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Usermanagement from './pages/Usermanagement';
@@ -28,7 +29,9 @@ function App() {
           <Route path="/Register" element={<Register />} />
           <Route path="/Bookmanagement" element={<Bookmanagement />} />
           <Route path="/Createnewbook" element={<Createnewbook />} />
+          <Route path="/CreateNewUser" element={<CreateNewUser />} />
           <Route path="/update-book/:id" element={<Createnewbook />} />
+          <Route path="/update-User/:id" element={<CreateNewUser />} />
           <Route path="/Usermanagement" element={<Usermanagement />} />
           <Route path="/library-mgmt-react" element={<Welcomepage />} />
           <Route path="/" element={<Welcomepage />} />

@@ -27,7 +27,7 @@ const Header = () => {
                 <li className="nav-item">
                   <Link className="nav-link" to="#">Privacy Policy</Link>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <Link className="nav-link" to="/"> <button
                     type="button"
                     className="btn btn-primary"
@@ -35,7 +35,7 @@ const Header = () => {
                   >
                     Login/Register
                   </button></Link>
-                </li>
+                </li> */}
                 <li className="nav-item">
                   <Link className="nav-link" to="/" onClick={handleLogout}><i className="fa fa-sign-out" /> Logout </Link>
                 </li>

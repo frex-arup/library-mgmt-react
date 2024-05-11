@@ -43,6 +43,12 @@ const Createnewbook = () => {
       console.log(updatedBook);
       updateBook(updatedBook);
       navigate('/Bookmanagement');
+      Swal.fire({
+        icon: "success",
+        // title: "Oops...",
+        text: "Successfully updated!",
+        // footer: '<a href="#">Why do I have this issue?</a>'
+      });
     } else {
       const newBook = { title, author, genre, publisher, isbn, price, stock };
       console.log(newBook);
